@@ -1,0 +1,207 @@
+Distributed Version Control System(Github)
+
+IMPORTANT BASICS COMMANDS TO WORK WITH CODEBASE
+
+1. Version of the Github (Ccheck the version)
+git --version
+
+
+2. Set config values
+
+git config --global user.name "xyz"
+git config --global user.email "abc@gmail.com" 
+
+List the information regarding configurations
+
+git config --list
+
+3. Help regarding git commands
+
+Example 1:
+git help config
+git config --help
+
+Example 2:
+
+git help add
+
+git add --help
+
+
+3. Initializing the repository from existing CODE 
+
+before going for initalization of a repository do the following
+
+ls 
+ls -la  // it will show hidden files
+
+git init // Initializing local repository
+
+check  using ls -la
+
+4.If we want to deactive as a repository (Untracking)
+
+rm -rf .git
+
+5. Before first commit
+
+a) git status
+
+If we want to ignore files
+
+touch .gitignore
+
+6.  Working directory ---->  Staging Area  ----->  .git directory(Repository)
+
+7. Adding files to staging Area
+
+git add .gitignore // only .gitignore file in stating area
+
+git add -A // All files in staging area
+
+8. Remove files from stating area
+
+git reset .gitignore // remove only .gitignore from staging area
+
+git reset // remove all files from staging area
+
+git add -A // Add all files to staging area
+
+9. Our first commit
+
+git commit -m "label"
+
+git status // how many commits are still pending
+
+git log //log information time stamp
+
+
+10. Cloning a remote repository
+
+git clone <url>
+
+git clone <url> . 
+
+11. Viewing information about remote repository
+
+git remote -v // information of repository
+
+git branch -a  // all branches in repository either local or global
+
+
+12.  Push changes
+
+git diff // changes in made CODE
+
+git status
+
+git add -A
+
+git commit -m "Label"
+
+THEN PUSH 
+
+git pull origin master // when working with multiple people working with on the same file and need to 
+update in the local repository
+
+git push origin master // push changes made in code base of master in local repository to remote repository
+
+
+13. COMMON WORKFLOW 
+
+A) CREATE A BRANCH FOR DESIRED FEATURE
+
+git branch calcualtor //create a branch with name calcualtor
+
+git checkout calcualtor // switch or toggle from master branch  to calcualtor
+
+git branch // know the status of current branch
+
+git status // status of file if any modificaiton  
+
+git add -A 
+
+git commit -m "Label"
+
+
+B) After commit push branch to remote
+
+git branch -a 
+
+git push -u origin calcualtor
+
+C) MERGE calcualtor branch to remote master
+
+git checkout master //swithc  from calcualtor to  master
+
+git pull origin master // if any modificaiton done by others on master
+
+git branch --merged // status is Not yet merged calcualtor branch to master
+
+git merge calcualtor // merge calcualtor branch to remote master 
+
+git push origin master // push record of local repository master to remote master repository
+
+git branch --merge // status is  merged calcualtor branch to master 
+
+D) DELETING A BRANCH
+
+git branch --merged 
+
+git branch -d calcualtor
+
+git branch -a 
+
+git push origin --delete calcualtor 
+
+git branch -a 
+
+14. FASTER Example
+
+A) git branch sub
+
+B) git checkout sub
+
+C) git status 
+
+
+D) git add -Add
+
+E) git commit -m "Label"
+
+F) git push -u origin sub
+
+G) git checkout master
+
+H) git pull origin master 
+
+I) git merge sub
+
+J) git push origin master 
+ 
+
+
+
+Tutorial 2:
+
+15. git status
+
+git diff
+
+git checkout file.txt // rollback changes if any in file.txt
+
+git commit -m "Subtract" // wrong commit message 
+
+git log // this is different
+
+git commit --amend -m "Add" // Subtract commit is replced by Add
+
+git log // this is different
+
+
+
+
+Websites:
+
+1) https://gist.github.com/arttuladhar/5887559
+
